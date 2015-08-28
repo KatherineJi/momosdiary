@@ -56,9 +56,13 @@ User.prototype.save = function (callback) {
 User.get = function(name,callback){
     //打开数据库
     mongodb.open(function(err,db){
+        console.log("enter open mongodb");
+        db.authenticate(username, password, function(err, result) {
         if(err){
+            console.log("OPEN error");
             return callback(err);
         }
+        console.log("OPEN success");
         //读取users集合
         db.collection('users',function(err,collection){
             if(err){
@@ -75,6 +79,7 @@ User.get = function(name,callback){
                 }
                 callback(null,user);
             });
+        });
         });
     });
 };
