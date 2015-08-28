@@ -21,17 +21,17 @@ var db = new Db(db_name, new Server(db_host, db_port, {}), {
 });
 
 //启动时建立连接
-db.open(function(err, db) {
-    db.authenticate(username, password, function(err, result) {
-        if (err) {
-            db.close();
-            // res.end('Authenticate failed!');
-            console.log("open db false");
-            return;
-        }
-        console.log("open db");
-    });
-});
+// db.open(function(err, db) {
+//     db.authenticate(username, password, function(err, result) {
+//         if (err) {
+//             db.close();
+//             // res.end('Authenticate failed!');
+//             console.log("open db false");
+//             return;
+//         }
+//         console.log("open db");
+//     });
+// });
 // var MongoStore = require('connect-mongo')(session);
 
 var routes = require('./routes/index');
