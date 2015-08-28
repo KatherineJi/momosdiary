@@ -289,7 +289,7 @@ Article.getArchive = function(callback){
                 }
                 //返回只包含name,time,title属性的文档组成的存储数组
                 collection.find({}, {
-                    'name': 1,
+                    'author': 1,
                     'time': 1,
                     'title': 1
                 }).sort({
