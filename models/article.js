@@ -290,7 +290,7 @@ Article.getArchive = function(callback){
                 //返回只包含name,time,title属性的文档组成的存储数组
                 collection.find({}, {
                     'author': 1,
-                    'time': 1,
+                    'time.day': 1,
                     'title': 1
                 }).sort({
                     time: -1
@@ -353,7 +353,7 @@ Article.getTag = function(tag,callback){
                     'tags': tag
                 }, {
                     'author': 1,
-                    'time': 1,
+                    'time.day': 1,
                     'title': 1
                 }).sort({
                     time: -1

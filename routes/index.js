@@ -248,7 +248,7 @@ var routes = function (app) {
   });
 
   app.get('/tags/:tag',function(req,res){
-      Article.getTag(req.process_params, function(err,articles){
+      Article.getTag(req.params.tag, function(err,articles){
           if(err){
               req.flash('error',err);
               return res.redirect('/');
