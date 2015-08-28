@@ -59,10 +59,10 @@ app.use(session({
   key: settings.db_name,//cookie name
   cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},//1 days
   resave: false,
-  saveUninitialized: true,
-  store: new MongoStore({
-    url: 'mongodb://mongo.duapp.com/YmtkddjHYDqLAwcKaNoh'
-  })
+  saveUninitialized: true
+  //store: new MongoStore({
+  //  url: 'mongodb://mongo.duapp.com/YmtkddjHYDqLAwcKaNoh'
+  //})
 }));
 var upload = multer({
   dest: './public/images',
@@ -70,16 +70,9 @@ var upload = multer({
     return filename;
   }
 });
-//app.use(multer({
-//  dest: './public/images',//上传文件所在目录
-//  rename: function (fieldname, filename){//修改上传后的文件名
-//    return filename;
-//  }
-//}));
 
 // 路由控制器
 routes(app);
-//app.use('/', routes);
 
 // 捕获404错误，并转发到错误处理器
 app.use(function(req, res, next) {
