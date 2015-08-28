@@ -5,7 +5,33 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+
+//链接mongodb
+var Db = require('mongodb').Db;
+var Server = require('mongodb').Server;
+var http = require('http');
+var db_name = '<YmtkddjHYDqLAwcKaNoh>'; //数据库名称
+var db_host = 'mongo.duapp.com'; //数据库地址
+var db_port = '8908'; // 数据库端口
+var username = '<ebf90fdcb5944aa0bb9b325fc98b1486>'; //用户AK
+var password = '<a6a91fea23284e6a9e7b9a6135207055>'; //用户SK
+
+var db = new Db(db_name, new Server(db_host, db_port, {}), {
+    w: 1
+});
+
+//启动时建立连接
+db.open(function(err, db) {
+    db.authenticate(username, password, function(err, result) {
+        if (err) {
+            db.close();
+            res.end('Authenticate failed!');
+            return;
+        }
+        console.log("open db");
+    });
+});
+// var MongoStore = require('connect-mongo')(session);
 
 var routes = require('./routes/index');
 var settings = require('./settings');
