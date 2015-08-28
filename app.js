@@ -7,18 +7,18 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 //链接mongodb
-var Db = require('mongodb').Db;
-var Server = require('mongodb').Server;
-var http = require('http');
-var db_name = 'YmtkddjHYDqLAwcKaNoh'; //数据库名称
-var db_host = 'mongo.duapp.com'; //数据库地址
-var db_port = '8908'; // 数据库端口
-var username = 'ebf90fdcb5944aa0bb9b325fc98b1486'; //用户AK
-var password = 'a6a91fea23284e6a9e7b9a6135207055'; //用户SK
-
-var db = new Db(db_name, new Server(db_host, db_port, {}), {
-    w: 1
-});
+//var Db = require('mongodb').Db;
+//var Server = require('mongodb').Server;
+//var http = require('http');
+//var db_name = 'YmtkddjHYDqLAwcKaNoh'; //数据库名称
+//var db_host = 'mongo.duapp.com'; //数据库地址
+//var db_port = '8908'; // 数据库端口
+//var username = 'ebf90fdcb5944aa0bb9b325fc98b1486'; //用户AK
+//var password = 'a6a91fea23284e6a9e7b9a6135207055'; //用户SK
+//
+//var db = new Db(db_name, new Server(db_host, db_port, {}), {
+//    w: 1
+//});
 
 //启动时建立连接
 // db.open(function(err, db) {
@@ -32,7 +32,7 @@ var db = new Db(db_name, new Server(db_host, db_port, {}), {
 //         console.log("open db");
 //     });
 // });
-// var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(session);
 
 var routes = require('./routes/index');
 var settings = require('./settings');
@@ -57,7 +57,12 @@ app.use(express.static(path.join(__dirname, 'public')));//设置public文件夹�
 app.use(session({
   secret: settings.cookieSecret,
   key: settings.db,//cookie name
-  cookie: {maxAge: 1000 * 60 * 60 * 24 * 1}//1 days
+  cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},//1 days
+  store: new MongoStore({
+    db: settings.db_name,
+    host: settings.db_host,
+    port: settings.db_port
+  })
 }));
 var upload = multer({
   dest: './public/images',
