@@ -58,10 +58,10 @@ app.use(session({
   secret: settings.cookieSecret,
   key: settings.db_name,//cookie name
   cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},//1 days
+  resave: false,
+  saveUninitialized: true,
   store: new MongoStore({
-    db: settings.db_name,
-    host: settings.db_host,
-    port: settings.db_port
+    url: 'mongodb://mongo.duapp.com/YmtkddjHYDqLAwcKaNoh'
   })
 }));
 var upload = multer({
