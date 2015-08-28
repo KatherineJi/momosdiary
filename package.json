@@ -1,12 +1,27 @@
 {
     "name": "bae-nodejs",
-    "version": "1.0.0",
-    "author": "bae",
-    "description": "The first bae nodejs app!",
+    "version": "0.0.1",
+    "author": "momo",
+    "description": "The first Momo's site!",
     "scripts": {
         "start": "node server.js"
     },
     "dependencies": {
+    	"body-parser": "",
+	    "cookie-parser": "",
+	    "debug": "",
+	    "express": "",
+	    "jade": "",
+	    "morgan": "",
+	    "serve-favicon": "",
+	    "stylus": "",
+	    "mongodb": "",
+	    "express-session": "",
+	    "connect-mongo": "",
+	    "connect-flash": "",
+	    "markdown": "",
+	    "multer": "",
+	    "formidable": ""
     }
 }
 

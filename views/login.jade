@@ -1,0 +1,26 @@
+extends layout
+block content
+
+    include includes/header
+
+    include includes/nav
+
+    #status
+    if (success)
+        div= success
+    else
+        div= error
+
+    form(method='post')
+       span 用户名：
+       input(type='text',name='name')
+       br
+
+       span 密码：
+       input(type='password',name='password')
+       br
+
+       button 登录
+
+
+    include includes/footer

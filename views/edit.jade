@@ -1,0 +1,28 @@
+extends layout
+block content
+    include includes/header
+    include includes/nav
+    #status
+        if (success)
+            div= success
+        else
+            div= error
+
+    form(method='post')
+        span 标题
+        br
+        input(type='text',name='title',value=article.title,disabled='disabled')
+        br
+        span 标签：
+        br
+        input(type='text',name='tag1',value=article.tags[0],disabled='disabled')
+        input(type='text',name='tag2',value=article.tags[1],disabled='disabled')
+        input(type='text',name='tag3',value=article.tags[2],disabled='disabled')
+        br
+        span 正文
+        br
+        textarea(name='content',rows='20',cols='100')= article.content
+        br
+        button 保存修改
+
+    include includes/footer

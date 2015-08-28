@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轻反馈-主页</title>
+    <!--[if lt IE 9]
+    <script src="js/ie9.js"></script>
+    <![endif]-->
+
+
+    <script src="js/json2.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="js/tools.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/head.js"></script>
+    <script src="js/mainPage.js"></script>
+    <script src="js/mainRight.js"></script>
+
+    <link rel="stylesheet" href="css/modernizrStyle.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/head.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/mainRight.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/mainPage.css" type="text/css" media="screen" charset="utf-8">
+
+    <script>
+        jQuery(function () {
+            JudgeUserAgent.isGoodUserAgent();
+            headInit();
+            init();
+        })
+    </script>
+</head>
+<body>
+    <div id="layer">
+
+    </div>
+    <div id="head">
+        <img id="logo" class="cursorPointer" src="img/logo.png" />
+        <div id="search">
+            <input id="searchInput" type="text" placeholder="搜索群组" />
+            <img id="searchLogo" class="cursorPointer" src="img/search.png" />
+        </div>
+        <div id="setUp">
+            <img id="setUpLogo" src="img/setUp.png" />
+            <div id="setUpList">
+                <div class="cursorPointer">
+                    <img class="setUpImg" src="img/account.png" />
+                    <p id="user" class="setUpText">个人中心</p>
+                </div>
+                <hr />
+                <div class="cursorPointer">
+                    <img class="setUpImg" src="img/icon_setUp.png" />
+                    <p id="set" class="setUpText">安全设置</p>
+                </div>
+                <hr />
+                <div class="cursorPointer">
+                    <img class="setUpImg" src="img/icon_logOut.png" />
+                    <p id="logout" class="setUpText">注销登录</p>
+                </div>
+            </div>
+        </div>
+        <div id="news">
+            <img src="img/news.png" />
+            <span id="newsNum">1</span>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainLeft">
+            <div id="group">
+                <!--
+                <img src="img/userPic.png">
+                <div class="separate"></div>
+                <div id="groupIntroduce" class="right">
+                    <h4>东北育才高一二班</h4>
+                    <span class="cursorPointer">编辑</span>
+                    <p>一个具有魅力的集体，有自己独特的风格与灵魂。让每个孩子都学会做人、学会生活、学会学习，让学习成为他们的快乐。</p>
+                </div>
+                <div class="separate"></div>
+                <div>
+                    <button id="applyIntoGroup" class="cursorPointer">退出该组</button>
+                    <button id="checkMember" class="cursorPointer">查看成员</button>
+                </div>
+                -->
+            </div>
+            <hr />
+            <div id="function">
+                <!--<div class="functionBlock">
+                    <img id="allType" class="cursorPointer" src="img/icon_allTypeOn.png" />
+                    <p class="cursorPointer">全部</p>
+                </div>-->
+                <div class="functionBlock">
+                    <img id="feedbackType" class="cursorPointer" src="img/icon_feedbackTypeOff.png" />
+                    <p class="cursorPointer">反馈</p>
+                </div>
+                <div class="functionBlock">
+                    <img id="homeworkType" class="cursorPointer" src="img/icon_homeworkTypeOff.png" />
+                    <p class="cursorPointer">作业</p>
+                </div>
+                <div class="functionBlock">
+                    <img id="informType" class="cursorPointer" src="img/icon_informTypeOff.png" />
+                    <p class="cursorPointer">通知</p>
+                </div>
+                <div class="separate"></div>
+                <div class="functionBlock">
+                    <img id="recordType" class="cursorPointer" src="img/icon_recordTypeOff.png" />
+                    <p class="cursorPointer">成绩</p>
+                </div>
+                <div class="separate"></div>
+                <div id="issuance" class="functionBlock">
+                    <div>
+                        <img id="issuanceButton" class="cursorPointer" src="img/icon_issuance.png" />
+                        <p class="cursorPointer">发布</p>
+                    </div>
+                    <div id="issuanceList">
+                        <span id="issueFeedback" class="issuanceType">反馈</span>
+                        <span id="issueHomework" class="issuanceType">作业</span>
+                        <span id="issueInform" class="issuanceType">通知</span>
+                        <span id="issueRecord" class="issuanceType">成绩</span>
+                    </div>
+                </div>
+            </div>
+            <div id="messageList" class="cd-timeline">
+                <!--
+                                <div id="10000" class="messageDetail odd cd-timeline-block">
+                                    <div class="messageUserPic cd-timeline-img">
+                                        <img src="img/userPic.png">
+                                    </div>
+
+                                    <div class="cd-timeline-content">
+                                        <p class='messageTitle'>东北育才高一二班第一次反馈</p>
+                                        <p class='messageContent'>从期中考试到第三次月考，孩子们在寝室纪律和内务上有了很大的进步，特别是自习纪律变化更大，说话无所事事的人少了……</p>
+                                        <p class="messageYear">14年</p>
+                                        <p class="messageMonth">10月</p>
+                                        <p class="messageDate">29日</p>
+                                        <p class="messageTime">22:00</p>
+                                        <div class="messageEndTime">截止时间：12月1日 22:00 &nbsp&nbsp已截止</div>
+
+                                        <span class="messageFrom cd-date">李老师</span>
+                                    </div>
+                                </div>
+                                <div id="10000" class="messageDetail cd-timeline-block">
+                                    <div class="messageUserPic cd-timeline-img">
+                                        <img src="img/userPic.png">
+                                    </div>
+
+                                    <div class="cd-timeline-content">
+                                        <h2 class='messageTitle'>东北育才高一二班第一次反馈</h2>
+                                        <p class='messageContent'>从期中考试到第三次月考，孩子们在寝室纪律和内务上有了很大的进步，特别是自习纪律变化更大，说话无所事事的人少了……</p>
+                                        <p class="messageYear">14年</p>
+                                        <p class="messageMonth">10月</p>
+                                        <p class="messageDate">29日</p>
+                                        <p class="messageTime">22:00</p>
+                                        <div class="messageEndTime">截止时间：12月1日 22:00 &nbsp&nbsp已截止</div>
+
+                                        <span class="messageFrom cd-date">李老师</span>
+                                    </div>
+                                </div>
+                                <div id="10000" class="messageDetail odd cd-timeline-block">
+                                    <div class="messageUserPic cd-timeline-img">
+                                        <img src="img/userPic.png">
+                                    </div>
+
+                                    <div class="cd-timeline-content">
+                                        <h2 class='messageTitle'>东北育才高一二班第一次反馈</h2>
+                                        <p class='messageContent'>从期中考试到第三次月考，孩子们在寝室纪律和内务上有了很大的进步，特别是自习纪律变化更大，说话无所事事的人少了……</p>
+                                        <p class="messageYear">14年</p>
+                                        <p class="messageMonth">10月</p>
+                                        <p class="messageDate">29日</p>
+                                        <p class="messageTime">22:00</p>
+                                        <div class="messageEndTime">截止时间：12月1日 22:00 &nbsp&nbsp已截止</div>
+
+                                        <span class="messageFrom cd-date">李老师</span>
+                                    </div>
+                                </div>
+                -->
+                <!--
+                <div id="10000" class="messageDetail odd">
+                    <div class="messageYear">14年</div>
+                    <div class="messageMonth">10月</div>
+                    <div class="messageTime">22:00</div>
+                    <div class="messageDate">29</div>
+                    <div class="messageUserPic cursorPointer"><img src="img/userPic.png"></div>
+                    <div class="messageTitle cursorPointer">东北育才高一二班第一次反馈</div>
+                    <div class="messageType">已回复 &nbsp&nbsp反馈</div>
+                    <div class="messageContent">从期中考试到第三次月考，孩子们在寝室纪律和内务上有了很大的进步，特别是自习纪律变化更大，说话无所事事的人少了……</div>
+                    <div class="messageFrom">李老师</div>
+                    <div class="messageEndTime">截止时间：12月1日 22:00 &nbsp&nbsp已截止</div>
+                </div>
+                -->
+            </div>
+        </div>
+        <div id="mainRight">
+            <div id="groupList">
+                <h2>我的群组</h2>
+                <button id="addNewGroup" class="cursorPointer">+ 创建</button>
+                <div>
+                    <!--
+                    <div id="1000" class="group groupSelected">
+                        <img src="img/userPic.png" >
+                        <span>
+                            <h4>落落建的组租</h4>
+                            <p>软件工程1206班</p>
+                        </span>
+                    </div>
+                    <div id="1000" class="group">
+                        <img src="img/userPic.png" >
+                        <span>
+                            <h4>兰兰建的组租</h4>
+                            <p>软件工程1206班</p>
+                        </span>
+                    </div>
+                    <div id="1000" class="group">
+                        <img src="img/userPic.png" >
+                        <span>
+                            <h4>兰兰给落落建的组</h4>
+                            <p>东北大学软件学院软件工程1206班</p>
+                        </span>
+                    </div>
+                    <div id="1000" class="group">
+                        <img src="img/userPic.png" >
+                        <span>
+                            <h4>兰兰给落落建的组</h4>
+                            <p>东北大学软件学院软件工程1206班</p>
+                        </span>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <hr />
+            <div id="expand">
+                <!--<span id="expandTitle">综合拓展</span>
+                <div class="expandDetail">
+                    <div class="expandPic cursorPointer"><img src="img/suggestGroupPic.jpg" /></div>
+                    <div class="expandIntroduce">世界最著名的六种教育方法</div>
+                </div>
+                <div class="expandDetail">
+                    <div class="expandPic cursorPointer"><img src="img/suggestGroupPic2.jpg" /></div>
+                    <div class="expandIntroduce">成绩究竟重不重要</div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div id='publishNoticePopup' class='popup'>
+        <div id='mask'></div>
+        <div id='popup-main'>
+            <h3 class='title'>发布通知</h3>
+            <img class='closePopup cursorPointer' src='img/close.png'>
+            <hr/>
+            <input type='text' placeholder='标题...'/>
+            <textarea placeholder='内容...'></textarea>
+            <span ></span>
+            <button class='publish cursorPointer'>发布</button>
+        </div>
+    </div>
+    -->
+    <!--
+    <div id='appliesPopup' class='popup'>
+        <div id='mask'></div>
+        <div id='popup-main'>
+            <h3 class='title'>入群申请</h3>
+            <img class='closePopup cursorPointer' src='img/close.png'>
+
+            <hr/>
+            <div id='"+apply["aid"]+"' class='apply'>
+                <div>
+                    <p class='applyName'>群昵称：张家长</p>
+                    <p class='applyTime'>2015/4/11</p>
+                </div>
+                <div>
+                    <p class='applyRemark'>备注：张家长</p>
+                    <button class='deny cursorPointer'>拒绝</button>
+                    <button class='admit cursorPointer'>同意</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!--
+    <div id='showAddgroupPopup' class='popup'>
+        <div id='mask'></div>
+        <div id='popup-main'>
+
+            <!--
+            <h3 class='title'>选择群组类别</h3>
+            <img class='closePopup' class='cursorPointer' src='img/close.png'>
+            <hr/>
+            <div id='chooseGroupType'>
+                <div class='popupLeft'>
+                    <div id='popupGroup' class='groupTypeInfo'>
+                        <img src='img/icon_group.png'/>
+                        <div class='groupInfo'>
+                            <h4>小组</h4>
+                            <p>定期反馈小组情况，搜集组员意见。<br/>适用单位：社会团体、兴趣社团、培训机构。</p>
+                        </div>
+                    </div>
+                    <div id='popupClass' class='groupTypeInfo'>
+                        <img src='img/icon_class.png'/>
+                        <div class='groupInfo'>
+                            <h4>班级</h4>
+                            <p>建立班级空间，定期反馈学生表现。<br/>独享成绩分析功能，让考试变得更有意义！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='separate'></div>
+                <div class='popupRight'>
+                    <img src='img/icon_groupInfo.png'>
+                </div>
+            </div>
+            -->
+    <!--
+    <h3 class='title'>完善班级信息</h3>
+    <img class='closePopup' class='cursorPointer' src='img/close.png'>
+    <hr/>
+    <div id='fillClassInfo'>
+        <div class='popupLeft'>
+            <span>学校：</span><input type='text' style='width: 280px;'/>
+            <p class='prompt'>请输入班级所在学校全称</p>
+            <span>班级：</span><input type='text' style='width: 50px;'/><span>级</span><input type='text' style='width: 50px;'/><span>班</span>
+            <p class='prompt'>请选择学生入学年份与班号</p>
+            <span>联系方式：</span><input type='text'/>
+            <p class='prompt'>请输入您的真实手机号码，提升审核速度</p>
+            <span>班级名单</span><button class='cursorPointer'>上传</button>
+            <p class='prompt'>请上传一份名单，内容为全体同学的“学号、姓名、性别”</p>
+        </div>
+        <div class='separate'></div>
+        <div class='popupRight'>
+            <img src='img/icon_class.png'>
+            <p>一个专属的班级空间</p>
+            <button class='submit cursorPointer'>提交审核</button>
+        </div>·
+    </div>
+    -->
+    <!--
+    <h3 class='title'>完善小组信息</h3>
+    <img class='closePopup' class='cursorPointer' src='img/close.png'>
+    <hr/>
+    <div id='fillGroupInfo'>
+        <div class='popupLeft'>
+            <span>名称：</span><input id='groupName' type='text' style='width: 280px;'/><br/>
+            <span>简介：</span><textarea></textarea><br/>
+            <span>地区：</span>
+            <select id='provinceChoose'>
+                <option value='21'>辽宁</option>
+                <option value='12'>广东</option>
+                <option value='34'>新疆</option>
+            </select>
+            <span>省</span>
+            <select id='cityChoose'>
+                <option value='01'>广州</option>
+                <option value='02'>深圳</option>
+                <option value='03'>珠海</option>
+                <option value='04'>佛山</option>
+                <option value='05'>汕头</option>
+            </select>
+            <span>市</span><br/>
+            <input type='checkbox'/><span>自动批准用户入群申请</span>
+        </div>
+        <div class='separate'></div>
+        <div class='popupRight'>
+            <img src='img/icon_group.png'>
+            <p>一个专属的小组空间</p>
+            <button class='submit cursorPointer'>提交审核</button>
+        </div>
+    </div>
+    -->
+    <!--
+    <h3 class='title'>创建成功</h3>
+    <img class='closePopup' class='cursorPointer' src='img/close.png'>
+    <hr/>
+    <div id='addClassSuccess'>
+        <div class='popupLeft'>
+            <img src='img/icon_group.png'>
+        </div>
+        <div class='popupRight'>
+            <h3>恭喜您！</h3>
+            <br/>
+            <h3>东北育才双鱼高中部已提交审核。</h3>
+            <br />
+            <br />
+            <p>管理员会在2个工作日内审核申请，
+            <br/>审核结果会以短信形式通知您，请耐心等待。</p>
+            <button class='inviteFriend cursorPointer'>邀请好友</button>
+        </div>
+    </div>
+    -->
+    <!--
+             <h3 class='title'>创建成功</h3>
+             <img class='closePopup' class='cursorPointer' src='img/close.png'>
+             <hr/>
+             <div id='addGroupSuccess'>
+                 <div class='popupLeft'>
+                     <img src='img/icon_group.png'>
+                 </div>
+                 <div class='popupRight'>
+                     <h3>恭喜您！</h3>
+                     <br/>
+                     <h3>小组创建成功！</h3>
+                     <br/>
+                     <button class='inviteFriend cursorPointer'>邀请好友</button>
+                 </div>
+             </div>
+
+
+         </div>
+     </div>
+    -->
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+extends layout
+block content
+   include includes/header
+   include includes/nav
+   ul.archive
+      -var lastYear = 0;
+      each article, index in articles
+         -if(lastYear != article.time.year)
+         li
+            h3= article.time.year
+         -lastYear=article.time.year
+         li
+            time= article.time.day
+         li
+            a(href='/u/' + article.author + '/' + article.time.day + '/' + article.title)= article.title
+include includes/footer
