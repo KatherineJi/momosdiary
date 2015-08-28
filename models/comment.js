@@ -2,6 +2,7 @@
  * Created by Momo on 15/8/8.
  */
 var mongodb = require('./db');
+var settings = require('../settings');
 
 function Comment(author, time, title, comment){
     this.author = author;
@@ -23,25 +24,30 @@ Comment.prototype.save = function(callback){
         if(err){
             return callback(err);
         }
-        //读取articles集合
-        db.collection('articles', function(err,collection){
-            if(err){
-                mongodb.close();
+        db.authenticate(settings.username, settings.password, function(err, result) {
+            if (err) {
                 return callback(err);
             }
-            //通过用户名、时间、标题查找，并把一条留言添加到文档的comments数组里
-            collection.update({
-                "author": author,
-                "time.day": time,
-                "title": title
-            }, {
-                $push: {"comments": comment}
-            }, function(err){
-                mongodb.close();
-                if(err){
+            //读取articles集合
+            db.collection('articles', function (err, collection) {
+                if (err) {
+                    mongodb.close();
                     return callback(err);
                 }
-                callback(null);
+                //通过用户名、时间、标题查找，并把一条留言添加到文档的comments数组里
+                collection.update({
+                    "author": author,
+                    "time.day": time,
+                    "title": title
+                }, {
+                    $push: {"comments": comment}
+                }, function (err) {
+                    mongodb.close();
+                    if (err) {
+                        return callback(err);
+                    }
+                    callback(null);
+                });
             });
         });
     });
