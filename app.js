@@ -56,7 +56,7 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));//设置public文件夹为存放静态文件的目录
 app.use(session({
   secret: settings.cookieSecret,
-  key: settings.db,//cookie name
+  key: settings.db_name,//cookie name
   cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},//1 days
   store: new MongoStore({
     db: settings.db_name,
