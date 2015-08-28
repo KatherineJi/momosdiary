@@ -24,10 +24,13 @@ User.prototype.save = function (callback) {
     };
     //打开数据库
     mongodb.open(function(err,db){
+        console.log("enter open mongodb");
         db.authenticate(username, password, function(err, result) {
         if(err){
+            console.log("OPEN error");
             return callback(err);//错误，返回err信息
         }
+        console.log("OPEN success");
         //读取users集合
         db.collection('users',function(err,collection){
             if(err){
