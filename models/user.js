@@ -9,6 +9,9 @@ function User(user){
     this.email = user.email;
 };
 
+var username = 'ebf90fdcb5944aa0bb9b325fc98b1486'; //用户AK
+var password = 'a6a91fea23284e6a9e7b9a6135207055'; //用户SK
+
 module.exports = User;
 
 //存储用户信息
@@ -21,6 +24,7 @@ User.prototype.save = function (callback) {
     };
     //打开数据库
     mongodb.open(function(err,db){
+        db.authenticate(username, password, function(err, result) {
         if(err){
             return callback(err);//错误，返回err信息
         }
@@ -40,6 +44,7 @@ User.prototype.save = function (callback) {
                 }
                 callback(null, user);//成功！err为null，并返回存储后的用户文档
             });
+        });
         });
     });
 };
