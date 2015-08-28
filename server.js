@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');//引入导出的app实例
+var app = require('app');//引入导出的app实例
 var debug = require('debug')('nodeTest:server');//引入debug模块，打印调试日志
 var http = require('http');
 
