@@ -25,7 +25,7 @@ db.open(function(err, db) {
     db.authenticate(username, password, function(err, result) {
         if (err) {
             db.close();
-            res.end('Authenticate failed!');
+            // res.end('Authenticate failed!');
             return;
         }
         console.log("open db");
