@@ -26,6 +26,7 @@ db.open(function(err, db) {
         if (err) {
             db.close();
             // res.end('Authenticate failed!');
+            console.log("open db false");
             return;
         }
         console.log("open db");
