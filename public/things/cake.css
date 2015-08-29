@@ -1,37 +1,37 @@
 html,body{
-	width: 100%;
-    height: 100%;
-	margin: 0;
-	padding: 0;
-	background: #ffd9d9;
-	min-width: 600px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #776c66;
+  min-width: 600px;
 }
 
 #cake{
-	width: 600px;
-	margin: 0 auto;
-	padding: 0;
-/* 	background: blue; */
-	position: relative;
-	display: block;
-	overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  /* 	background: blue; */
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 
 
 /* ============================================== Fire */
 #candle1{
-	top: 350px;
-	right: 53px;
+  top: 350px;
+  right: 53px;
 }
 
 #candle2{
-	top: 350px;
-	left: 35px;
+  top: 350px;
+  left: 35px;
 }
 
 .candlelight {
-/* 	display: none; */
+  /* 	display: none; */
   position: relative;
   -webkit-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
@@ -43,11 +43,12 @@ html,body{
   animation: in 0.4s 3.4s ease-out forwards;
   z-index: 100;
   opacity: 0;
+  filter:Alpha(opacity=0)
 }
 
 .candlelight:after,
 .candlelight:before {
-/*   background: rgba(255, 0, 0, 0.4); */
+  /*   background: rgba(255, 0, 0, 0.4); */
   content: "";
   position: absolute;
   width: 100%;
@@ -138,21 +139,21 @@ html,body{
 }
 
 @-webkit-keyframes in {
-	
+
   to {
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
+    filter:Alpha(opacity=100)
   }
 }
 @keyframes in {
-	20%{
-		opacity: 0.5;
-	}	
-	
+
   to {
     -webkit-transform: translateY(0);
     transform: translateY(0);
+    opacity: 1;
+    filter:Alpha(opacity=100)
   }
 }
 .text {
