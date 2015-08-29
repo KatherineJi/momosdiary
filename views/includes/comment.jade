@@ -1,0 +1,31 @@
+each comment, index in article.comments
+   p
+      a(href=comment.website)= comment.author
+      span.info 回复于
+         = comment.time
+   div!= comment.content
+
+form(method='post')
+   if(user)
+      span 姓名：
+      input(type='text',name='author',value=user.name)
+      br
+      span 邮箱：
+      input(type='text',name='email',value=user.email)
+      br
+      span 网址：
+      input(type='text',name='website',value='/u/'+user.name)
+      br
+   else
+      span 姓名：
+      input(type='text',name='author')
+      br
+      span 邮箱：
+      input(type='text',name='email')
+      br
+      span 网址：
+      input(type='text',name='website',value='http://')
+      br
+   textarea(name='content',rows='5',cols='80')
+   br
+   button 留言

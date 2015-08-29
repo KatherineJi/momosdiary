@@ -1,0 +1,29 @@
+extends layout
+block content
+
+    include includes/header
+
+    include includes/nav
+
+    #status
+        if (success)
+            div= success
+        else
+            div= error
+
+    form(method='post')
+       span 标题：
+       input(type='text',name='title')
+       br
+       span 标签：
+       br
+       input(type='text',name='tag1')
+       input(type='text',name='tag2')
+       input(type='text',name='tag3')
+       br
+       span 正文：
+       textarea(name='content',rows='20',cols='100')
+       br
+       button 发表
+
+    include includes/footer

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>眼珠随页面光标而在眼眶范围内滚动</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+.mbox{background:transparent url(http://www.itref.cn/uploads/allimg/100622/1_100622134201_1.gif) no-repeat scroll left top;width:150px;height:80px;position:relative;margin:0 auto;}
+.mbox span{background-color:#000;font-size:0;display:block;width:5px;height:5px;overflow:hidden;position:absolute;}
+</style>
+</head>
+<body>
+<div style="height:100px;"></div>
+<div id="mbox" class="mbox">
+    <span style="left:105.5px;top:23.5px;"></span>
+    <span style="left:125.5px;top:23.5px;"></span>
+</div>
+<div style="height:500px;"></div>
+<script type="text/javascript">
+	
+function getPos(obj){
+    var p={};
+	p.x=obj.offsetLeft;
+	p.y=obj.offsetTop;
+	while(obj=obj.offsetParent){
+     	p.x+=obj.offsetLeft;
+	 	p.y+=obj.offsetTop;
+	 	console.log(p.x);
+ 	}
+ 	return p;
+}
+
+function each(objs,f){
+    for(var i=0;i<objs.length;i++){
+    	f(i); 
+    }
+}
+
+function act(){
+    var eyes=document.getElementById('mbox').getElementsByTagName('span');
+// 	var cr=10;
+	var pr=1.5;
+	var of=150;
+	var cssp=[];
+    cssp[0]={x:105.5,y:23.5};
+	cssp[1]={x:125.5,y:23.5};
+	var np=[]; 
+    each(eyes,function(i){
+    	var p=getPos(eyes[i]);
+    	console.log(p.x);
+		p.x+=pr;
+		p.y+=pr;
+		np[i]=p; //针对全局的眼珠的坐标 
+ 	});
+ 	document.getElementsByTagName('body')[0].onmousemove=function(e){
+		var e=e||window.event;
+		var mouse={x:e.clientX,y:e.clientY};
+		each(eyes,function(i){
+	    	var p=track(mouse,np[i]);   
+		    p.x+=cssp[i].x-1.5;
+		    p.y+=cssp[i].y-1.5;
+		    eyes[i].style.left=p.x+"px";
+		    eyes[i].style.top=p.y+"px";   
+		});
+	}
+ 
+	function track(m,n){
+	    var p={x:0,y:0};
+		var absoluteX=m.x-n.x;//(绝对坐标)鼠标x-眼珠x
+		var absoluteY=m.y-n.y;
+		var tmp;
+	    tmp=10*longRate(absoluteX,absoluteY);//10*rate
+		p.x=absoluteX/Math.abs(absoluteX)*Math.sqrt(tmp*tmp/(1+absoluteY*absoluteY/(absoluteX*absoluteX)));
+		p.y=absoluteY/Math.abs(absoluteY)*Math.sqrt(tmp*tmp/(1+absoluteX*absoluteX/(absoluteY*absoluteY)));  
+		return p;
+	}
+	
+	function longRate(absoluteX,absoluteY){
+	    var juLi=Math.sqrt(absoluteX*absoluteX+absoluteY*absoluteY);
+		var rate=1;
+		if(juLi>=150){
+	      	rate=1;
+	  	}else if(juLi<=1.5){
+	      	rate=0;
+	  	}else{
+	      	rate=juLi/150;
+		  	rate=rate>1?1:rate;
+	  	}
+	  	return rate;
+	}
+}
+
+act();
+</script>
+</body>
+</html>

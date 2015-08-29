@@ -1,0 +1,12 @@
+extends layout
+block content
+    include includes/header
+    include includes/nav
+    #status
+        if (success)
+            div= success
+        else
+            div= error
+    each tag, index in articles
+       a.tag(href='/tags/'+tag)= tag
+    include includes/footer

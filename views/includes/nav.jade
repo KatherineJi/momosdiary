@@ -1,0 +1,16 @@
+nav
+   span
+      a(title='主页', href='/') 主页
+      if user
+         a(title='上传', href='/upload') 上传
+         a(title='发表', href='/post') 发表
+         a(title='存档', href='/archive') 存档
+         a(title='友情链接', href='/links') links
+         a(title='标签', href='/tags') tags
+         a(title='登出', href='/logout') 登出
+      else
+         a(title='登录', href='/login') 登录
+         a(title='注册', href='/register') 注册
+   span
+      form(action='/search',method='GET')
+         input.search(type='text',name='keyword',placeholder='搜索')

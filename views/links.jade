@@ -1,0 +1,19 @@
+extends layout
+block content
+    include includes/header
+    include includes/nav
+    #status
+    if (success)
+        div= success
+    else
+        div= error
+    ul(style='list-style:none')
+       li
+         h3
+            a(href='http://www.baidu.com') 百度
+         span 百度一下，你就知道！
+       li
+          h3
+             a(href='http://www.qq.com') QQ
+          span 腾讯欢乐世界
+    include includes/footer
