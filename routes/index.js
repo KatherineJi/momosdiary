@@ -18,9 +18,7 @@ var formidable = require('formidable'),
 
 var routes = function (app) {
     app.get('/', function (req, res) {//首页
-        res.render('/thing/cake.html', {
-
-        });
+        res.redirect('/things/cake.html');
     });
 
   app.get('/blog/', function (req, res) {//首页
