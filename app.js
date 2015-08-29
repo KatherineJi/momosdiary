@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+//
 //链接mongodb
 //var Db = require('mongodb').Db;
 //var Server = require('mongodb').Server;
