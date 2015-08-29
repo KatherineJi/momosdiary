@@ -80,10 +80,12 @@
       <file leaf-file-name="cake.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/things/cake.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31328672">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.35804197">
+              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1440839830000" expanded="true" signature="56:499" placeholder="..." />
+                <marker date="1440839830000" expanded="true" signature="91:486" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -518,10 +520,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/things/cake.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31328672">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.35804197">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1440839830000" expanded="true" signature="56:499" placeholder="..." />
+            <marker date="1440839830000" expanded="true" signature="91:486" placeholder="{...}" />
           </folding>
         </state>
       </provider>
