@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a426d8e-08d2-4395-b90c-3193220dc0f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/things/cake.css" afterPath="$PROJECT_DIR$/public/things/cake.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/things/cake.html" afterPath="$PROJECT_DIR$/public/things/cake.html" />
     </list>
     <ignored path="appiddteqfbdf07.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +71,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.9567568">
               <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
-              <folding />
+              <folding>
+                <marker date="1440839434000" expanded="true" signature="9:11" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cake.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/things/cake.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-778.68">
+              <caret line="1815" column="7" selection-start-line="1815" selection-start-column="7" selection-end-line="1815" selection-end-column="7" />
+              <folding>
+                <marker date="1440839424000" expanded="true" signature="565:196408" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,6 +135,7 @@
         <option value="$PROJECT_DIR$/models/article.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/things/cake.html" />
         <option value="$PROJECT_DIR$/public/things/cake.css" />
       </list>
     </option>
@@ -491,11 +507,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/things/cake.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-778.68">
+          <caret line="1815" column="7" selection-start-line="1815" selection-start-column="7" selection-end-line="1815" selection-end-column="7" />
+          <folding>
+            <marker date="1440839424000" expanded="true" signature="565:196408" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/things/cake.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9567568">
           <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1440839434000" expanded="true" signature="9:11" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
