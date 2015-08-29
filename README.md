@@ -1,4 +1,3 @@
 # momosdiary
 
-
-Change
+This is a site about some interesting things.
