@@ -1,16 +1,16 @@
 nav
    span
-      a(title='主页', href='/') 主页
+      a(title='主页', href='/blog/') 主页
       if user
-         a(title='上传', href='/upload') 上传
-         a(title='发表', href='/post') 发表
-         a(title='存档', href='/archive') 存档
-         a(title='友情链接', href='/links') links
-         a(title='标签', href='/tags') tags
-         a(title='登出', href='/logout') 登出
+         a(title='上传', href='/blog/upload') 上传
+         a(title='发表', href='/blog/post') 发表
+         a(title='存档', href='/blog/archive') 存档
+         a(title='友情链接', href='/blog/links') links
+         a(title='标签', href='/blog/tags') tags
+         a(title='登出', href='/blog/logout') 登出
       else
-         a(title='登录', href='/login') 登录
-         a(title='注册', href='/register') 注册
+         a(title='登录', href='/blog/login') 登录
+         a(title='注册', href='/blog/register') 注册
    span
-      form(action='/search',method='GET')
+      form(action='/blog/search',method='GET')
          input.search(type='text',name='keyword',placeholder='搜索')
