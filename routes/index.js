@@ -26,6 +26,7 @@ var routes = function (app) {
       //查询并返回第page页的10篇文章
       Article.getTen(null, page, function(err,articles,total){
           if(err){
+              console.log(err);
               articles = [];
           }
           res.render('index', {
