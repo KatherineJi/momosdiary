@@ -16,16 +16,16 @@ block content
     each article, index in articles
       .article
         h2
-          a(href='/u/'+article.author+'/'+article.time.day+'/'+article.title)= article.title
+          a(href='/blog/u/'+article.author+'/'+article.time.day+'/'+article.title)= article.title
         p.info
           span 作者：
-          a(href='/u/'+article.author)= article.author
+          a(href='/blog/u/'+article.author)= article.author
           span  | 日期：
           span= article.time.minute
           span  | 标签：
           each tag, index in article.tags
             if(tag)
-              a.tag(href='/tags/'+tag)= tag
+              a.tag(href='/blog/tags/'+tag)= tag
         div!= article.content
         p.info
           span 阅读：

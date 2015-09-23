@@ -1,0 +1,168 @@
+* {
+		font-size: 12px;
+		color: #003F98;
+	}
+
+	#wrapper {
+		width: 960px;
+		margin: 0 auto;
+		padding: 0 0;
+		
+	}
+	
+	#header {
+		height: 100px;
+		position: relative;
+		background:  url(images/background.jpg) no-repeat;
+	}
+	
+	#header .logo {
+		padding: 20px 0 0 20px;
+		float: left;
+	}
+	#header a {
+		color: #003f98;
+		text-decoration: none;
+	}
+	#header .nav {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	#header .nav a {
+		color: #4261ae;
+		font-size: 16px;	
+	}
+	/*new 下拉菜单*/
+	#nav {
+		position: absolute;
+		bottom: 3px;
+		right: 0px;
+	}
+	
+	#nav li {
+		border-right: #003f98 solid 1px;
+		display: block;
+		float: left;
+		padding: 0px 3px;
+		
+	}
+	#nav li a {
+		color: #4261ae;
+	}
+	#nav li.last {
+		border-right: none;
+	}
+	/*下拉菜单结束*/
+	
+	#banner {
+		clear: both;
+		position: relative;
+		top: 0px;
+		left: 0px;
+		z-index:-1;
+	}
+	#banner .bigimg {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	
+
+	.widget h2 {
+		font-size: 20px;
+		color:  #003f97;
+		margin: 0px;
+		padding: 5px 0;
+		border-bottom: #4d83c1 solid 5px;
+	}
+	.widget ul {
+		list-style: none;
+		margin: -4px -7px;   /*正文顶头*/
+		padding: 0 0;
+	}
+
+	.widget a {
+		color: #3e3a39;
+		text-decoration: none;
+	}
+	.widget li {
+		line-height: 22px;
+	}
+	.widget .footer {
+		font-size: 12px;
+		text-align: right;
+	}
+	.widget .footer a {
+		color: #6283a1;	
+	}
+	
+	.imgnews .image  {
+		text-align: center;
+	}
+	.imgnews h2 {
+		border-bottom: none;
+	}
+	.imgnews h3 {
+		text-align: center;
+	}
+	.imgnews .content {
+		font-size: 12px;
+	}
+	
+	.other a {
+		color: #8c7448	
+	}
+	.topic .content {
+		text-align: center;
+		padding: 5px;
+	}
+	
+	#content #col1{
+		float: left;
+		width: 280px;
+		padding: 120px 0 0 0;
+	}
+	
+	#content #col3 {
+		float: right;
+		width: 280px;
+	}
+	
+	#content #col2 {
+		margin: 0 300px;
+		width: 360px;
+	}
+	
+	#content #col4 {
+		padding: 5px;
+		background: #8f9ab6;
+		text-align: center;
+		clear: both;
+	}
+	#col4 a{
+		color: #FFF;
+		text-decoration:none;
+	}
+	
+	#footer {
+		color: #9c9c9c;	
+		padding: 10px;
+		text-align: center;
+	}
+	#footer p {
+		margin: 0;	
+	}
+	
+	.linktitle{
+	float:left;}
+	.datetime{
+	float:right;
+	}
+	.clear{
+		clear:both;
+		padding:0;
+		margin:0;
+	}
+
+

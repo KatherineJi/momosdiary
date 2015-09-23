@@ -87,12 +87,15 @@ var routes = function (app) {
 
   app.post('/blog/register', checkNotLogin);
   app.post('/blog/register', function(req,res){//注册
+      console.log("accept register!");
       var name = req.body.name,
           password = req.body.password,
-          password_repeat = req.body['password-repeat'],
+          password_repeat = req.body['passwordRepeat'],
           email = req.body.email;
+      console.log(name);
       //检验用户两次输入的密码一致性
       if(password_repeat != password){
+          console.log("两次输入的密码不一致");
           req.flash('error', '两次输入的密码不一致！');
           return res.redirect('/blog/register');
       }
@@ -110,6 +113,7 @@ var routes = function (app) {
               req.flash('error',err);
               return res.redirect('/blog/');
           }
+          console.log(newUser);
           if(user){
               req.flash('error','用户已存在！');
               return res.redirect('/blog/register');
@@ -118,11 +122,14 @@ var routes = function (app) {
           newUser.save(function(err,user){
               if(err){
                   req.flash('error',err);
+                  console.log(err);
                   return res.redirect('/blog/register');
               }
               req.session.user = user;
               req.flash('success','注册成功！');
-              res.redirect('/blog/');
+              console.log("注册成功");
+              res.json("成功~~~");
+              //res.redirect('/blog/');
           });
       });
   });
@@ -180,9 +187,9 @@ var routes = function (app) {
       form.parse(req, function(err, fields, files) {
 
           if (err) {
+              console.log("上传失败")
               req.flash('error', '上传失败！');
-              res.redirect('/blog/upload');
-              return;
+              return res.redirect('/blog/upload');
           }
 
           var extName = '';  //后缀名
@@ -202,9 +209,9 @@ var routes = function (app) {
           }
 
           if(extName.length == 0){
+              console.log("后缀不对");
               req.flash('error', '只支持png和jpg格式图片！');
-              res.redirect('/blog/upload');
-              return;
+              return res.redirect('/blog/upload');
           }
 
           console.log(files);

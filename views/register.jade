@@ -1,5 +1,15 @@
-extends layout
-block content
+//extends layout
+//block content
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='/js/jquery-1.7.2.js')
+        script(src='/js/register.js')
+        script.
+
+
+    body
 
     include includes/header
 
@@ -11,17 +21,21 @@ block content
 
     form(method='post')
         span 用户名：
-        input(type='text',name='name')
+        input#name(type='text',name='name')
         br
         span 密码：
-        input(type='password',name='password')
+        input#pwd(type='password',name='password')
         br
         span 确认密码：
-        input(type='password',name='password-repeat')
+        input#pwdAgain(type='password',name='passwordRepeat')
         br
         span 邮箱：
-        input(type='email',name='email')
+        input#email(type='email',name='email')
         br
-        button 注册
+
+    button#submit 注册
 
     include includes/footer
+
+
+
